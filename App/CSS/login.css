@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-register-container {
+    display: flex;
+    height: 100vh;
+    transition: all 0.5s ease;
+}
+
+.left-side {
+    flex: 1;
+    background-color: #2d2d2d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.message-container {
+    text-align: center;
+}
+
+.message-container h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.message-container p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.message-container button {
+    padding: 10px 20px;
+    background-color: #e48900;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.message-container button:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, .5), 0 0 10px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9FB;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.submit-button {
+    padding: 12px;
+    background-color: #e48900;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.submit-button:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, .5), 0 0 10px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+}
+
+.left-side img {
+    max-width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+/* Estilo básico e transição para o contêiner principal */
+.login-register-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Esconde qualquer transbordamento durante a transição */
+}
+
+/* Configurações de transição para os lados */
+.left-side, .right-side {
+    width: 50%;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+/* Posicionamento inicial */
+.left-side {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-side {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Classe que troca os lados */
+.switch-sides .left-side {
+    transform: translateX(100%); /* Desliza o lado esquerdo para a direita */
+}
+
+.switch-sides .right-side {
+    transform: translateX(-100%); /* Desliza o lado direito para a esquerda */
+}
+
+/* Contêiner dos botões de login social */
+.social-login {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+    white-space: nowrap; /* Impede quebra de linha no texto */
+}
+
+/* Checkbox "Lembrar de mim" */
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-left: 8px;
+}
+
+/* Estilo do link "Esqueci minha senha" */
+.forgot-password {
+    color: #e48900;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Estilo base para os botões circulares */
+.social-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão do Google */
+.google-button {
+    background-color: #db4437;
+}
+
+.google-button:hover {
+    background-color: #c1351d;
+}
+
+/* Botão do Facebook */
+.facebook-button {
+    background-color: #4267B2;
+}
+
+.facebook-button:hover {
+    background-color: #365899;
+}
+
+/* Efeito de clique */
+.social-button:active {
+    transform: scale(0.95);
+}
+
+
+.hidden {
+    display: none;
+}
